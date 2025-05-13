@@ -6,5 +6,12 @@ await db.end();
 console.log("🌱 Database seeded.");
 
 async function seedEmployees() {
-  // TODO
+  for (let i = 0; i < 25; i++) {
+    const employee = {
+      name: "Employee" + i,
+      birthday: "2011-05-02",
+      salary: Math.floor(Math.random() * 999999),
+    };
+    await createEmployee(employee);
+  }
 }
